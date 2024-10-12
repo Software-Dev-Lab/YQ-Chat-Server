@@ -5,23 +5,22 @@
  * @LastEditTime: 2024-10
  * @Description: app.ts
  */
-// 引入koa
+// 创建 koa 实例
 import Koa from 'koa'
-import http from 'http'
-
-// 创建koa实例
 const app = new Koa()
 
-// 创建服务器
-const server: http.Server = new http.Server(app.callback())
+// 设置路径别名
+import { addAliases } from 'module-alias'
+addAliases({'@': __dirname})
 
 // 中间件
 app.use(async (ctx) => {
+  console.log(ctx)
   ctx.body = 'Hello World'
 })
 
 // 监听端口
-app.listen(9000, () => {
+app.listen(1129, () => {
   console.log('run success')
   console.log('app started at port 9000...')
 })
