@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2015", // 目标语言版本
+    "module": "commonjs", // 指定生成代码的模块标准
+    "rootDir": "./src", // 指定源文件目录
+    "outDir": "./dist", // 指定输出目录
+    "strict": true, // 严格模式
+    "allowSyntheticDefaultImports": true, // 允许没有默认导出时编译器创建一个默认导出
+    "esModuleInterop": true, // 允许通过 import from 导入一个由 export = 导出的模块
+    "forceConsistentCasingInFileNames": true // 强制区分文件名的大小写
+  },
+  "include": [
+    // 需要编译的的文件和目录
+    "src/**/*"
+  ],
+}
