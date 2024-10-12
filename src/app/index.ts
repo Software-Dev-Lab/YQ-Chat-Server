@@ -5,22 +5,21 @@
  * @LastEditTime: 2024-10
  * @Description: app.ts
  */
-// 创建 koa 实例
 import Koa from 'koa'
+import { addAliases } from 'module-alias'
+import cors from '@koa/cors'
+import json from 'koa-json'
+import bodyParser from 'koa-bodyparser'
+
 const app = new Koa()
 
-// 设置路径别名
-import { addAliases } from 'module-alias'
 addAliases({'@': __dirname})
 
-// 中间件
-app.use(async (ctx) => {
-  console.log(ctx)
-  ctx.body = 'Hello World'
-})
+app.use(cors())
+app.use(json())
+app.use(bodyParser())
 
-// 监听端口
-app.listen(1129, () => {
+app.listen(3000, () => {
   console.log('run success')
   console.log('app started at port 9000...')
 })
