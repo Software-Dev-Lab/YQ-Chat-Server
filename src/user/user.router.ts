@@ -23,16 +23,16 @@ router.post('/login', UserController.login)
 /**
  * @description 获取用户信息
  */
-router.get('/user')
+router.get('/user', UserController.getUserInfo)
 
 /**
  * @description 删除用户
  */
-router.delete('/user')
+router.delete('/user', UserController.delete)
 
 /**
  * @description 修改用户信息
  * */
-router.put('/user')
+router.put('/user', UserController.updateUserInfo)
 
 export default router
