@@ -1,4 +1,9 @@
 export interface RegisterRequestBody {
-    email: string;
-    password: string;
+  username: string
+  password: string
+}
+
+export interface LoginRequestBody {
+  username: string
+  password: string
 }

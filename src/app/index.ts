@@ -6,21 +6,19 @@
  * @Description: app.ts
  */
 import Koa from 'koa'
-import { addAliases } from 'module-alias'
-import cors from 'koa2-cors'
 import json from 'koa-json'
+import cors from 'koa2-cors'
 import bodyParser from 'koa-bodyparser'
-import  { responseHandler, errorHandler } from './app.middleware'
+import router from '../user/user.router'
+import { addAliases } from 'module-alias'
+
+addAliases({ '@': __dirname })
 
 const app = new Koa()
-
-addAliases({'@': __dirname})
-
 app.use(cors())
 app.use(json())
 app.use(bodyParser())
-app.use(responseHandler)
-app.use(errorHandler)
+app.use(router.routes()).use(router.allowedMethods())
 
 app.listen(3000, () => {
   console.log('Server started at port 3000 🎉')
