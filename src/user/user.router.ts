@@ -7,6 +7,7 @@
  */
 import Router from '@koa/router'
 import UserController from './user.controller'
+import exp from 'constants'
 
 const router = new Router()
 
@@ -34,3 +35,6 @@ router.delete('/user')
  * @description 修改用户信息
  * */
 router.put('/user')
+
+
+export default router

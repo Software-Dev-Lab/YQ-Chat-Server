@@ -1,5 +1,12 @@
+/*
+ * @Author: ZRMYDYCG
+ * @Date: 2024-10
+ * @LastEditors: ZRMYDYCG
+ * @LastEditTime: 2024-10
+ * @Description: 
+ */
 import type { Context } from 'koa'
-import { UserModel } from './user.model'
+import UserModel from './user.model'
 import type { RegisterRequestBody } from './interface/index'
 
 class UserController {
